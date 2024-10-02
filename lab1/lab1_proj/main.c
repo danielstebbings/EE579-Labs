@@ -21,12 +21,12 @@ char button_flag = 0;
 char counter_flag = 0;
 // Interrupt Service Routines
 #pragma vector = TIMER0_A0_VECTOR
-__interrupt void Timer_A(void) {
-    TA0CTL = TA0CTL & (~MC_3);  // Stop timer, retain config
+__interrupt void count_isr(void) {
     counter_flag = 1;
 
     return;
 }
+
 
 #pragma vector = PORT1_VECTOR
 __interrupt void button_interrupt(void) {
@@ -38,22 +38,25 @@ __interrupt void button_interrupt(void) {
 
 }
 
+
 /**
  * main.c
  */
+
 int main(void)
 {
 	WDTCTL = WDTPW | WDTHOLD;	// stop watchdog timer
 	__enable_interrupt();
 	counter_flag = 0;
 	button_flag  = 0;
-	// Set up timer A
-	TA0CTL = MC_0; // Stop Timer
 
-	TA0CTL = TASSEL_1 +   // ACLK
-	          ID_3 +      // /8
-	          MC_0 +      // Stop Timer
-	          TAIE;       // Timer A Interrupt Enable
+	TA0CTL = MC_0; // Stop Timer A0
+	TA0CCTL0 = CCIE; // Enable Interrupt
+
+	// Set TA into upmode with defined clock
+	const int TA_UP = TASSEL_1 +  // ACLK
+                      ID_3     +  // /8
+                      MC_1;       // Start Timer, upmode to CCR0
 
 	// Set up pins
 	P2DIR = BIT1 + BIT3 + BIT5; // RGB LED
@@ -72,9 +75,8 @@ int main(void)
 	enum LIGHT_STATE state = WAITING;
 
 	// wait times
-	yellow_count = 12795;
-	red1_count = 3074;
-	red2_count = red1_count;
+	const int yellow_count = 12795;
+	const int red_count = 3074;
 
 	// main loop
 	while(1) {
@@ -87,30 +89,49 @@ int main(void)
                     P2OUT = RGB_YELLOW;
                     TA0CCR0 = yellow_count;
 
-                    TA0CTL = TASSEL_1 +   // ACLK
-                                  ID_3 +      // /8
-                                  MC_1 +      // Stop Timer
-                                  TAIE;       // Timer A Interrupt Enable
+                    TA0CTL = TA_UP;
+
                     state = WAIT_YELLOW;
                 }
                 break;
+
             case WAIT_YELLOW:
                 if (counter_flag) {// 3 seconds has passed
+                    TA0CTL = MC_0; // stop timer
+
                     P2OUT  = 0; // turn off RGB LED
                     P1OUT |= LED_RED; // turn on red led
+
+                    TA0CCR0 = red_count;
+                    TA0CTL = TA_UP;
+                    TA0CCTL0 = CCIE; // Enable Interrupt
+
+                    state = WAIT_RED;
+
+                    counter_flag = 0;
+                }
+                break;
+            case WAIT_RED:
+                if (counter_flag) { // time to swap LEDs
+                    P2OUT ^= RGB_RED;
+                    P1OUT ^= LED_RED;
+
+                    counter_flag = 0;
 
                     state = WAIT_RED;
 
                 }
-
-
                 break;
             case BUTTON_RELEASED:
+                TA0CTL = MC_0;   // Stop timer
+
+                // Turn off LEDS
                 P2OUT = 0;
                 P1OUT = 0;
-                TA0CTL = TA0CTL & (~MC_3);  // Stop timer, retain config
+
                 button_flag = 0;
                 state = WAITING;
+                break;
 	    }
 
 
