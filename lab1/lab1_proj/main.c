@@ -16,9 +16,17 @@ enum LIGHT_STATE {
 #define RGB_YELLOW  RGB_RED + RGB_GREEN
 #define LED_RED     BIT6;
 
+// wait times
+const int yellow_count  = 12795;
+const int red_count     = 3074;
+
 //  Interrupt flags
-char button_flag = 0;
+//char button_flag = 0;
 char counter_flag = 0;
+
+// State
+enum LIGHT_STATE state = WAITING;
+
 // Interrupt Service Routines
 #pragma vector = TIMER0_A0_VECTOR
 __interrupt void count_isr(void) {
@@ -30,9 +38,16 @@ __interrupt void count_isr(void) {
 
 #pragma vector = PORT1_VECTOR
 __interrupt void button_interrupt(void) {
-
-    button_flag = 1;
     P1IFG &=  ~BIT3; // clear flag for button
+
+    if (state == WAITING) { // Button pressed
+        state = WAIT_YELLOW;
+        __bic_SR_register_on_exit(LPM4_bits); // Clear Low Power Mode on exit
+
+    }
+    else { // Button Released
+        state = BUTTON_RELEASED;
+    }
 
     return;
 
@@ -48,7 +63,7 @@ int main(void)
 	WDTCTL = WDTPW | WDTHOLD;	// stop watchdog timer
 	__enable_interrupt();
 	counter_flag = 0;
-	button_flag  = 0;
+	//button_flag  = 0;
 
 	TA0CTL = MC_0; // Stop Timer A0
 	TA0CCTL0 = CCIE; // Enable Interrupt
@@ -66,33 +81,23 @@ int main(void)
 	P1OUT = 0;
 	// Button on P1.3, implicitly set as input
 
-	// P1 Interrupt
-	P1IFG = 0; // clear flag
-	P1IE  = BIT3; // enable interrupt
-	P1IES = 0; // Interrupt on low -> high
+
 
 	// Initialising State Machine
-	enum LIGHT_STATE state = WAITING;
+	state = WAITING;
 
-	// wait times
-	const int yellow_count = 12795;
-	const int red_count = 3074;
 
 	// main loop
 	while(1) {
-	    if (button_flag) {
-	        state = BUTTON_RELEASED;
-	    }
 	    switch (state) {
             case WAITING:
-                if (!(P1IN & BIT3)) { // button pressed
-                    P2OUT = RGB_YELLOW;
-                    TA0CCR0 = yellow_count;
+                // P1 Interrupt
+                P1IFG = 0; // clear flag
+                P1IE  = BIT3; // enable interrupt
+                P1IES = 1; // Interrupt on high -> low (pressed)
 
-                    TA0CTL = TA_UP;
-
-                    state = WAIT_YELLOW;
-                }
+                //__low_power_mode_4(); // Enter low power mode 4. Only restarts with interrupt
+                //state = WAIT_YELLOW;
                 break;
 
             case WAIT_YELLOW:
@@ -129,7 +134,7 @@ int main(void)
                 P2OUT = 0;
                 P1OUT = 0;
 
-                button_flag = 0;
+                //button_flag = 0;
                 state = WAITING;
                 break;
 	    }
