@@ -9,6 +9,9 @@ GEN_CMDS__FLAG :=
 
 ORDERED_OBJS += \
 "./main.obj" \
+"./peripherals.obj" \
+"./scheduling.obj" \
+"../lnk_msp430g2553.cmd" \
 $(GEN_CMDS__FLAG) \
 -llibc.a \
 
@@ -117,29 +120,29 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-lab3_proj.out 
+lab3_2.out 
 
 EXE_OUTPUTS__QUOTED += \
-"lab3_proj.out" 
+"lab3_2.out" 
 
 
 # All Target
-all: $(OBJS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "lab3_proj.out"
+all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+	@$(MAKE) --no-print-directory -Onone "lab3_2.out"
 
 # Tool invocations
-lab3_proj.out: $(OBJS) $(GEN_CMDS)
+lab3_2.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: MSP430 Linker'
-	"/home/daniel/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"lab3_proj.map" --heap_size=80 --stack_size=80 -i"/home/daniel/ti/ccs1281/ccs/ccs_base/msp430/include" -i"/home/daniel/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib" -i"/home/daniel/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab3_proj_linkInfo.xml" --use_hw_mpy=none --rom_model -o "lab3_proj.out" $(ORDERED_OBJS)
+	"/home/daniel/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/cl430" -vmsp --use_hw_mpy=none --advice:power=all --define=__MSP430G2553__ -g --printf_support=minimal --diag_warning=225 --diag_wrap=off --display_error_number -z -m"lab3_2.map" --heap_size=80 --stack_size=80 -i"/home/daniel/ti/ccs1281/ccs/ccs_base/msp430/include" -i"/home/daniel/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib" -i"/home/daniel/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="lab3_2_linkInfo.xml" --use_hw_mpy=none --rom_model -o "lab3_2.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" 
-	-$(RM) "main.d" 
+	-$(RM) "main.obj" "peripherals.obj" "scheduling.obj" 
+	-$(RM) "main.d" "peripherals.d" "scheduling.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
