@@ -36,8 +36,8 @@ void setup_pot_ADC(void) {
 
 // Buzzer -------------------------------
 
-// Timer_A0, PWM with toggle
-// Use TA0.0, TA0.1 outputs
+// Timer_A1, PWM with toggle
+// Use TA1.0, TA1.1 outputs
 // Each output is out of phase
 void setup_buzzer_timer( unsigned int frequency) {
     // SMCLK /4, Up mode
