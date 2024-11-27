@@ -1,0 +1,592 @@
+MSP430 Assembler Unix v21.6.1 Tue Nov 26 21:31:57 2024
+
+Copyright (c) 2003-2018 Texas Instruments Incorporated
+scheduling.asm                                                       PAGE    1
+
+       1            ;******************************************************************************
+       2            ;* MSP430 G3 C/C++ Codegen                                          Unix v21.6.1.LTS *
+       3            ;* Date/Time created: Tue Nov 26 21:31:57 2024                                *
+       4            ;******************************************************************************
+       5                    .compiler_opts --abi=eabi --diag_wrap=off --hll_source=on --mem_model:code=small --mem_model:d
+       6            
+       7            $C$DW$CU        .dwtag  DW_TAG_compile_unit
+       8                    .dwattr $C$DW$CU, DW_AT_name("../scheduling.c")
+       9                    .dwattr $C$DW$CU, DW_AT_producer("TI MSP430 G3 C/C++ Codegen Unix v21.6.1.LTS Copyright (c) 20
+      10                    .dwattr $C$DW$CU, DW_AT_TI_version(0x01)
+      11                    .dwattr $C$DW$CU, DW_AT_comp_dir("/home/daniel/Github/EE579-Labs/lab3_2/Debug")
+      12            $C$DW$1 .dwtag  DW_TAG_variable
+      13                    .dwattr $C$DW$1, DW_AT_name("TA0CTL")
+      14                    .dwattr $C$DW$1, DW_AT_TI_symbol_name("TA0CTL")
+      15                    .dwattr $C$DW$1, DW_AT_type(*$C$DW$T$24)
+      16                    .dwattr $C$DW$1, DW_AT_declaration
+      17                    .dwattr $C$DW$1, DW_AT_external
+      18                    .dwattr $C$DW$1, DW_AT_decl_file("/home/daniel/ti/ccs1281/ccs/ccs_base/msp430/include/msp430g2
+      19                    .dwattr $C$DW$1, DW_AT_decl_line(0x1f7)
+      20                    .dwattr $C$DW$1, DW_AT_decl_column(0x01)
+      21            
+      22            $C$DW$2 .dwtag  DW_TAG_variable
+      23                    .dwattr $C$DW$2, DW_AT_name("TA0CCTL0")
+      24                    .dwattr $C$DW$2, DW_AT_TI_symbol_name("TA0CCTL0")
+      25                    .dwattr $C$DW$2, DW_AT_type(*$C$DW$T$24)
+      26                    .dwattr $C$DW$2, DW_AT_declaration
+      27                    .dwattr $C$DW$2, DW_AT_external
+      28                    .dwattr $C$DW$2, DW_AT_decl_file("/home/daniel/ti/ccs1281/ccs/ccs_base/msp430/include/msp430g2
+      29                    .dwattr $C$DW$2, DW_AT_decl_line(0x1f8)
+      30                    .dwattr $C$DW$2, DW_AT_decl_column(0x01)
+      31            
+      32            $C$DW$3 .dwtag  DW_TAG_variable
+      33                    .dwattr $C$DW$3, DW_AT_name("TA0CCTL1")
+      34                    .dwattr $C$DW$3, DW_AT_TI_symbol_name("TA0CCTL1")
+      35                    .dwattr $C$DW$3, DW_AT_type(*$C$DW$T$24)
+      36                    .dwattr $C$DW$3, DW_AT_declaration
+      37                    .dwattr $C$DW$3, DW_AT_external
+      38                    .dwattr $C$DW$3, DW_AT_decl_file("/home/daniel/ti/ccs1281/ccs/ccs_base/msp430/include/msp430g2
+      39                    .dwattr $C$DW$3, DW_AT_decl_line(0x1f9)
+      40                    .dwattr $C$DW$3, DW_AT_decl_column(0x01)
+      41            
+      42            $C$DW$4 .dwtag  DW_TAG_variable
+      43                    .dwattr $C$DW$4, DW_AT_name("TA0CCTL2")
+      44                    .dwattr $C$DW$4, DW_AT_TI_symbol_name("TA0CCTL2")
+      45                    .dwattr $C$DW$4, DW_AT_type(*$C$DW$T$24)
+      46                    .dwattr $C$DW$4, DW_AT_declaration
+      47                    .dwattr $C$DW$4, DW_AT_external
+      48                    .dwattr $C$DW$4, DW_AT_decl_file("/home/daniel/ti/ccs1281/ccs/ccs_base/msp430/include/msp430g2
+      49                    .dwattr $C$DW$4, DW_AT_decl_line(0x1fa)
+      50                    .dwattr $C$DW$4, DW_AT_decl_column(0x01)
+      51            
+      52            $C$DW$5 .dwtag  DW_TAG_variable
+      53                    .dwattr $C$DW$5, DW_AT_name("TA0CCR0")
+      54                    .dwattr $C$DW$5, DW_AT_TI_symbol_name("TA0CCR0")
+      55                    .dwattr $C$DW$5, DW_AT_type(*$C$DW$T$24)
+MSP430 Assembler Unix v21.6.1 Tue Nov 26 21:31:57 2024
+
+Copyright (c) 2003-2018 Texas Instruments Incorporated
+scheduling.asm                                                       PAGE    2
+
+      56                    .dwattr $C$DW$5, DW_AT_declaration
+      57                    .dwattr $C$DW$5, DW_AT_external
+      58                    .dwattr $C$DW$5, DW_AT_decl_file("/home/daniel/ti/ccs1281/ccs/ccs_base/msp430/include/msp430g2
+      59                    .dwattr $C$DW$5, DW_AT_decl_line(0x1fc)
+      60                    .dwattr $C$DW$5, DW_AT_decl_column(0x01)
+      61            
+      62            $C$DW$6 .dwtag  DW_TAG_variable
+      63                    .dwattr $C$DW$6, DW_AT_name("CurrentTime")
+      64                    .dwattr $C$DW$6, DW_AT_TI_symbol_name("CurrentTime")
+      65                    .dwattr $C$DW$6, DW_AT_type(*$C$DW$T$19)
+      66                    .dwattr $C$DW$6, DW_AT_declaration
+      67                    .dwattr $C$DW$6, DW_AT_external
+      68                    .dwattr $C$DW$6, DW_AT_decl_file("../scheduling.h")
+      69                    .dwattr $C$DW$6, DW_AT_decl_line(0x18)
+      70                    .dwattr $C$DW$6, DW_AT_decl_column(0x0d)
+      71            
+      72            ;       /home/daniel/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/opt430 /tmp/TI4lv3CFkt
+      73 000000               .sect   ".text:setup_schedule_timerA0"
+      74                    .clink
+      75                    .global setup_schedule_timerA0
+      76            
+      77            $C$DW$7 .dwtag  DW_TAG_subprogram
+      78                    .dwattr $C$DW$7, DW_AT_name("setup_schedule_timerA0")
+      79                    .dwattr $C$DW$7, DW_AT_low_pc(setup_schedule_timerA0)
+      80                    .dwattr $C$DW$7, DW_AT_high_pc(0x00)
+      81                    .dwattr $C$DW$7, DW_AT_TI_symbol_name("setup_schedule_timerA0")
+      82                    .dwattr $C$DW$7, DW_AT_external
+      83                    .dwattr $C$DW$7, DW_AT_TI_begin_file("../scheduling.c")
+      84                    .dwattr $C$DW$7, DW_AT_TI_begin_line(0x19)
+      85                    .dwattr $C$DW$7, DW_AT_TI_begin_column(0x06)
+      86                    .dwattr $C$DW$7, DW_AT_decl_file("../scheduling.c")
+      87                    .dwattr $C$DW$7, DW_AT_decl_line(0x19)
+      88                    .dwattr $C$DW$7, DW_AT_decl_column(0x06)
+      89                    .dwattr $C$DW$7, DW_AT_TI_max_frame_size(0x02)
+      90                    .dwpsn  file "../scheduling.c",line 25,column 42,is_stmt,address setup_schedule_timerA0,isa 0
+      91            
+      92                    .dwfde $C$DW$CIE, setup_schedule_timerA0
+      93            $C$DW$8 .dwtag  DW_TAG_formal_parameter
+      94                    .dwattr $C$DW$8, DW_AT_name("period")
+      95                    .dwattr $C$DW$8, DW_AT_TI_symbol_name("period")
+      96                    .dwattr $C$DW$8, DW_AT_type(*$C$DW$T$19)
+      97                    .dwattr $C$DW$8, DW_AT_location[DW_OP_reg12]
+      98            
+      99            
+     100            ;*****************************************************************************
+     101            ;* FUNCTION NAME: setup_schedule_timerA0                                     *
+     102            ;*                                                                           *
+     103            ;*   Regs Modified     : SP,SR,r12                                           *
+     104            ;*   Regs Used         : SP,SR,r12                                           *
+     105            ;*   Local Frame Size  : 0 Args + 0 Auto + 0 Save = 0 byte                   *
+     106            ;*****************************************************************************
+     107 000000       setup_schedule_timerA0:
+     108            ;* --------------------------------------------------------------------------*
+     109                    .dwcfi  cfa_offset, 2
+     110                    .dwcfi  save_reg_to_mem, 16, -2
+MSP430 Assembler Unix v21.6.1 Tue Nov 26 21:31:57 2024
+
+Copyright (c) 2003-2018 Texas Instruments Incorporated
+scheduling.asm                                                       PAGE    3
+
+     111                    .dwpsn  file "../scheduling.c",line 31,column 5,is_stmt,isa 0
+     112 000000 4382          MOV.W     #0,&TA0CTL+0          ; [] |31| 
+         000002 0000!
+     113                    .dwpsn  file "../scheduling.c",line 32,column 5,is_stmt,isa 0
+     114 000004 5C0C          RLA.W     r12                   ; [] |32| 
+     115 000006 5C0C          RLA.W     r12                   ; [] |32| 
+     116 000008 4C82          MOV.W     r12,&TA0CCR0+0        ; [] |32| 
+         00000a 0000!
+     117                    .dwpsn  file "../scheduling.c",line 33,column 5,is_stmt,isa 0
+     118 00000c 40B2          MOV.W     #16,&TA0CCTL0+0       ; [] |33| 
+         00000e 0010 
+         000010 0000!
+     119                    .dwpsn  file "../scheduling.c",line 34,column 5,is_stmt,isa 0
+     120 000012 4382          MOV.W     #0,&TA0CCTL1+0        ; [] |34| 
+         000014 0000!
+     121                    .dwpsn  file "../scheduling.c",line 35,column 5,is_stmt,isa 0
+     122 000016 4382          MOV.W     #0,&TA0CCTL2+0        ; [] |35| 
+         000018 0000!
+     123                    .dwpsn  file "../scheduling.c",line 36,column 5,is_stmt,isa 0
+     124 00001a 40B2          MOV.W     #464,&TA0CTL+0        ; [] |36| 
+         00001c 01D0 
+         00001e 0000!
+     125                    .dwpsn  file "../scheduling.c",line 41,column 1,is_stmt,isa 0
+     126            $C$DW$9 .dwtag  DW_TAG_TI_branch
+     127                    .dwattr $C$DW$9, DW_AT_low_pc(0x00)
+     128                    .dwattr $C$DW$9, DW_AT_TI_return
+     129            
+     130 000020 4130          RET       ; [] 
+     131                    ; [] 
+     132                    .dwattr $C$DW$7, DW_AT_TI_end_file("../scheduling.c")
+     133                    .dwattr $C$DW$7, DW_AT_TI_end_line(0x29)
+     134                    .dwattr $C$DW$7, DW_AT_TI_end_column(0x01)
+     135                    .dwendentry
+     136                    .dwendtag $C$DW$7
+     137            
+     138 000000               .sect   ".text:sec2ms"
+     139                    .clink
+     140                    .global sec2ms
+     141            
+     142            $C$DW$10        .dwtag  DW_TAG_subprogram
+     143                    .dwattr $C$DW$10, DW_AT_name("sec2ms")
+     144                    .dwattr $C$DW$10, DW_AT_low_pc(sec2ms)
+     145                    .dwattr $C$DW$10, DW_AT_high_pc(0x00)
+     146                    .dwattr $C$DW$10, DW_AT_TI_symbol_name("sec2ms")
+     147                    .dwattr $C$DW$10, DW_AT_external
+     148                    .dwattr $C$DW$10, DW_AT_type(*$C$DW$T$19)
+     149                    .dwattr $C$DW$10, DW_AT_TI_begin_file("../scheduling.c")
+     150                    .dwattr $C$DW$10, DW_AT_TI_begin_line(0x12)
+     151                    .dwattr $C$DW$10, DW_AT_TI_begin_column(0x06)
+     152                    .dwattr $C$DW$10, DW_AT_decl_file("../scheduling.c")
+     153                    .dwattr $C$DW$10, DW_AT_decl_line(0x12)
+     154                    .dwattr $C$DW$10, DW_AT_decl_column(0x06)
+     155                    .dwattr $C$DW$10, DW_AT_TI_max_frame_size(0x02)
+     156                    .dwpsn  file "../scheduling.c",line 18,column 27,is_stmt,address sec2ms,isa 0
+     157            
+MSP430 Assembler Unix v21.6.1 Tue Nov 26 21:31:57 2024
+
+Copyright (c) 2003-2018 Texas Instruments Incorporated
+scheduling.asm                                                       PAGE    4
+
+     158                    .dwfde $C$DW$CIE, sec2ms
+     159            $C$DW$11        .dwtag  DW_TAG_formal_parameter
+     160                    .dwattr $C$DW$11, DW_AT_name("seconds")
+     161                    .dwattr $C$DW$11, DW_AT_TI_symbol_name("seconds")
+     162                    .dwattr $C$DW$11, DW_AT_type(*$C$DW$T$10)
+     163                    .dwattr $C$DW$11, DW_AT_location[DW_OP_reg12]
+     164            
+     165            
+     166            ;*****************************************************************************
+     167            ;* FUNCTION NAME: sec2ms                                                     *
+     168            ;*                                                                           *
+     169            ;*   Regs Modified     : SP,SR,r12                                           *
+     170            ;*   Regs Used         : SP,SR,r12                                           *
+     171            ;*   Local Frame Size  : 0 Args + 0 Auto + 0 Save = 0 byte                   *
+     172            ;*****************************************************************************
+     173 000000       sec2ms:
+     174            ;* --------------------------------------------------------------------------*
+     175                    .dwcfi  cfa_offset, 2
+     176                    .dwcfi  save_reg_to_mem, 16, -2
+     177                    .dwpsn  file "../scheduling.c",line 19,column 5,is_stmt,isa 0
+     178            $C$DW$12        .dwtag  DW_TAG_TI_branch
+     179                    .dwattr $C$DW$12, DW_AT_low_pc(0x00)
+     180                    .dwattr $C$DW$12, DW_AT_name("__mspabi_slli_10")
+     181                    .dwattr $C$DW$12, DW_AT_TI_call
+     182            
+     183 000000 12B0          CALL      #__mspabi_slli_10     ; [] |19| 
+         000002 0000!
+     184                                                      ; [] |19| 
+     185                    .dwpsn  file "../scheduling.c",line 20,column 1,is_stmt,isa 0
+     186            $C$DW$13        .dwtag  DW_TAG_TI_branch
+     187                    .dwattr $C$DW$13, DW_AT_low_pc(0x00)
+     188                    .dwattr $C$DW$13, DW_AT_TI_return
+     189            
+     190 000004 4130          RET       ; [] 
+     191                    ; [] 
+     192                    .dwattr $C$DW$10, DW_AT_TI_end_file("../scheduling.c")
+     193                    .dwattr $C$DW$10, DW_AT_TI_end_line(0x14)
+     194                    .dwattr $C$DW$10, DW_AT_TI_end_column(0x01)
+     195                    .dwendentry
+     196                    .dwendtag $C$DW$10
+     197            
+     198 000000               .sect   ".text:schedule"
+     199                    .clink
+     200                    .global schedule
+     201            
+     202            $C$DW$14        .dwtag  DW_TAG_subprogram
+     203                    .dwattr $C$DW$14, DW_AT_name("schedule")
+     204                    .dwattr $C$DW$14, DW_AT_low_pc(schedule)
+     205                    .dwattr $C$DW$14, DW_AT_high_pc(0x00)
+     206                    .dwattr $C$DW$14, DW_AT_TI_symbol_name("schedule")
+     207                    .dwattr $C$DW$14, DW_AT_external
+     208                    .dwattr $C$DW$14, DW_AT_type(*$C$DW$T$19)
+     209                    .dwattr $C$DW$14, DW_AT_TI_begin_file("../scheduling.c")
+     210                    .dwattr $C$DW$14, DW_AT_TI_begin_line(0x2b)
+     211                    .dwattr $C$DW$14, DW_AT_TI_begin_column(0x06)
+MSP430 Assembler Unix v21.6.1 Tue Nov 26 21:31:57 2024
+
+Copyright (c) 2003-2018 Texas Instruments Incorporated
+scheduling.asm                                                       PAGE    5
+
+     212                    .dwattr $C$DW$14, DW_AT_decl_file("../scheduling.c")
+     213                    .dwattr $C$DW$14, DW_AT_decl_line(0x2b)
+     214                    .dwattr $C$DW$14, DW_AT_decl_column(0x06)
+     215                    .dwattr $C$DW$14, DW_AT_TI_max_frame_size(0x02)
+     216                    .dwpsn  file "../scheduling.c",line 43,column 27,is_stmt,address schedule,isa 0
+     217            
+     218                    .dwfde $C$DW$CIE, schedule
+     219            $C$DW$15        .dwtag  DW_TAG_formal_parameter
+     220                    .dwattr $C$DW$15, DW_AT_name("delay")
+     221                    .dwattr $C$DW$15, DW_AT_TI_symbol_name("delay")
+     222                    .dwattr $C$DW$15, DW_AT_type(*$C$DW$T$19)
+     223                    .dwattr $C$DW$15, DW_AT_location[DW_OP_reg12]
+     224            
+     225            
+     226            ;*****************************************************************************
+     227            ;* FUNCTION NAME: schedule                                                   *
+     228            ;*                                                                           *
+     229            ;*   Regs Modified     : SP,SR,r12                                           *
+     230            ;*   Regs Used         : SP,SR,r12                                           *
+     231            ;*   Local Frame Size  : 0 Args + 0 Auto + 0 Save = 0 byte                   *
+     232            ;*****************************************************************************
+     233 000000       schedule:
+     234            ;* --------------------------------------------------------------------------*
+     235                    .dwcfi  cfa_offset, 2
+     236                    .dwcfi  save_reg_to_mem, 16, -2
+     237                    .dwpsn  file "../scheduling.c",line 44,column 5,is_stmt,isa 0
+     238 000000 521C          ADD.W     &CurrentTime+0,r12    ; [] |44| 
+         000002 0000!
+     239                    .dwpsn  file "../scheduling.c",line 45,column 1,is_stmt,isa 0
+     240            $C$DW$16        .dwtag  DW_TAG_TI_branch
+     241                    .dwattr $C$DW$16, DW_AT_low_pc(0x00)
+     242                    .dwattr $C$DW$16, DW_AT_TI_return
+     243            
+     244 000004 4130          RET       ; [] 
+     245                    ; [] 
+     246                    .dwattr $C$DW$14, DW_AT_TI_end_file("../scheduling.c")
+     247                    .dwattr $C$DW$14, DW_AT_TI_end_line(0x2d)
+     248                    .dwattr $C$DW$14, DW_AT_TI_end_column(0x01)
+     249                    .dwendentry
+     250                    .dwendtag $C$DW$14
+     251            
+     252 000000               .sect   ".text:isTime"
+     253                    .clink
+     254                    .global isTime
+     255            
+     256            $C$DW$17        .dwtag  DW_TAG_subprogram
+     257                    .dwattr $C$DW$17, DW_AT_name("isTime")
+     258                    .dwattr $C$DW$17, DW_AT_low_pc(isTime)
+     259                    .dwattr $C$DW$17, DW_AT_high_pc(0x00)
+     260                    .dwattr $C$DW$17, DW_AT_TI_symbol_name("isTime")
+     261                    .dwattr $C$DW$17, DW_AT_external
+     262                    .dwattr $C$DW$17, DW_AT_type(*$C$DW$T$6)
+     263                    .dwattr $C$DW$17, DW_AT_TI_begin_file("../scheduling.c")
+     264                    .dwattr $C$DW$17, DW_AT_TI_begin_line(0x2f)
+     265                    .dwattr $C$DW$17, DW_AT_TI_begin_column(0x06)
+MSP430 Assembler Unix v21.6.1 Tue Nov 26 21:31:57 2024
+
+Copyright (c) 2003-2018 Texas Instruments Incorporated
+scheduling.asm                                                       PAGE    6
+
+     266                    .dwattr $C$DW$17, DW_AT_decl_file("../scheduling.c")
+     267                    .dwattr $C$DW$17, DW_AT_decl_line(0x2f)
+     268                    .dwattr $C$DW$17, DW_AT_decl_column(0x06)
+     269                    .dwattr $C$DW$17, DW_AT_TI_max_frame_size(0x02)
+     270                    .dwpsn  file "../scheduling.c",line 47,column 25,is_stmt,address isTime,isa 0
+     271            
+     272                    .dwfde $C$DW$CIE, isTime
+     273            $C$DW$18        .dwtag  DW_TAG_formal_parameter
+     274                    .dwattr $C$DW$18, DW_AT_name("event")
+     275                    .dwattr $C$DW$18, DW_AT_TI_symbol_name("event")
+     276                    .dwattr $C$DW$18, DW_AT_type(*$C$DW$T$19)
+     277                    .dwattr $C$DW$18, DW_AT_location[DW_OP_reg12]
+     278            
+     279            
+     280            ;*****************************************************************************
+     281            ;* FUNCTION NAME: isTime                                                     *
+     282            ;*                                                                           *
+     283            ;*   Regs Modified     : SP,SR,r12,r15                                       *
+     284            ;*   Regs Used         : SP,SR,r12,r15                                       *
+     285            ;*   Local Frame Size  : 0 Args + 0 Auto + 0 Save = 0 byte                   *
+     286            ;*****************************************************************************
+     287 000000       isTime:
+     288            ;* --------------------------------------------------------------------------*
+     289                    .dwcfi  cfa_offset, 2
+     290                    .dwcfi  save_reg_to_mem, 16, -2
+     291            ;* r12   assigned to event
+     292            $C$DW$19        .dwtag  DW_TAG_variable
+     293                    .dwattr $C$DW$19, DW_AT_name("event")
+     294                    .dwattr $C$DW$19, DW_AT_TI_symbol_name("event")
+     295                    .dwattr $C$DW$19, DW_AT_type(*$C$DW$T$19)
+     296                    .dwattr $C$DW$19, DW_AT_location[DW_OP_reg12]
+     297            
+     298                    .dwpsn  file "../scheduling.c",line 48,column 5,is_stmt,isa 0
+     299 000000 434F          MOV.B     #0,r15                ; [] |48| 
+     300 000002 9C82          CMP.W     r12,&CurrentTime+0    ; [] |48| 
+         000004 0000!
+     301 000006 2001          JNE       $C$L1                 ; [] |48| 
+     302                                                      ; [] |48| 
+     303            ;* --------------------------------------------------------------------------*
+     304 000008 435F          MOV.B     #1,r15                ; [] |48| 
+     305            ;* --------------------------------------------------------------------------*
+     306 00000a       $C$L1:    
+     307 00000a 4F0C          MOV.W     r15,r12               ; [] |48| 
+     308                    .dwpsn  file "../scheduling.c",line 49,column 1,is_stmt,isa 0
+     309            $C$DW$20        .dwtag  DW_TAG_TI_branch
+     310                    .dwattr $C$DW$20, DW_AT_low_pc(0x00)
+     311                    .dwattr $C$DW$20, DW_AT_TI_return
+     312            
+     313 00000c 4130          RET       ; [] 
+     314                    ; [] 
+     315                    .dwattr $C$DW$17, DW_AT_TI_end_file("../scheduling.c")
+     316                    .dwattr $C$DW$17, DW_AT_TI_end_line(0x31)
+     317                    .dwattr $C$DW$17, DW_AT_TI_end_column(0x01)
+     318                    .dwendentry
+     319                    .dwendtag $C$DW$17
+MSP430 Assembler Unix v21.6.1 Tue Nov 26 21:31:57 2024
+
+Copyright (c) 2003-2018 Texas Instruments Incorporated
+scheduling.asm                                                       PAGE    7
+
+     320            
+     321            ;*****************************************************************************
+     322            ;* UNDEFINED EXTERNAL REFERENCES                                             *
+     323            ;*****************************************************************************
+     324                    .global TA0CTL
+     325                    .global TA0CCTL0
+     326                    .global TA0CCTL1
+     327                    .global TA0CCTL2
+     328                    .global TA0CCR0
+     329                    .global CurrentTime
+     330                    .global __mspabi_slli_10
+     331            
+     332            ;******************************************************************************
+     333            ;* BUILD ATTRIBUTES                                                           *
+     334            ;******************************************************************************
+     335                    .battr "TI", Tag_File, 1, Tag_LPM_INFO(1)
+     336                    .battr "TI", Tag_File, 1, Tag_PORTS_INIT_INFO("012345678901ABCDEFGHIJ0111000000000000000000000
+     337                    .battr "TI", Tag_File, 1, Tag_LEA_INFO(1)
+     338                    .battr "TI", Tag_File, 1, Tag_HW_MPY32_INFO(1)
+     339                    .battr "TI", Tag_File, 1, Tag_HW_MPY_ISR_INFO(1)
+     340                    .battr "TI", Tag_File, 1, Tag_HW_MPY_INLINE_INFO(1)
+     341                    .battr "mspabi", Tag_File, 1, Tag_enum_size(3)
+     342            
+     343            ;******************************************************************************
+     344            ;* TYPE INFORMATION                                                           *
+     345            ;******************************************************************************
+     346            $C$DW$T$2       .dwtag  DW_TAG_unspecified_type
+     347                    .dwattr $C$DW$T$2, DW_AT_name("void")
+     348            
+     349            $C$DW$T$4       .dwtag  DW_TAG_base_type
+     350                    .dwattr $C$DW$T$4, DW_AT_encoding(DW_ATE_boolean)
+     351                    .dwattr $C$DW$T$4, DW_AT_name("bool")
+     352                    .dwattr $C$DW$T$4, DW_AT_byte_size(0x01)
+     353            
+     354            $C$DW$T$5       .dwtag  DW_TAG_base_type
+     355                    .dwattr $C$DW$T$5, DW_AT_encoding(DW_ATE_signed_char)
+     356                    .dwattr $C$DW$T$5, DW_AT_name("signed char")
+     357                    .dwattr $C$DW$T$5, DW_AT_byte_size(0x01)
+     358            
+     359            $C$DW$T$6       .dwtag  DW_TAG_base_type
+     360                    .dwattr $C$DW$T$6, DW_AT_encoding(DW_ATE_unsigned_char)
+     361                    .dwattr $C$DW$T$6, DW_AT_name("unsigned char")
+     362                    .dwattr $C$DW$T$6, DW_AT_byte_size(0x01)
+     363            
+     364            $C$DW$T$7       .dwtag  DW_TAG_base_type
+     365                    .dwattr $C$DW$T$7, DW_AT_encoding(DW_ATE_signed_char)
+     366                    .dwattr $C$DW$T$7, DW_AT_name("wchar_t")
+     367                    .dwattr $C$DW$T$7, DW_AT_byte_size(0x02)
+     368            
+     369            $C$DW$T$8       .dwtag  DW_TAG_base_type
+     370                    .dwattr $C$DW$T$8, DW_AT_encoding(DW_ATE_signed)
+     371                    .dwattr $C$DW$T$8, DW_AT_name("short")
+     372                    .dwattr $C$DW$T$8, DW_AT_byte_size(0x02)
+     373            
+     374            $C$DW$T$9       .dwtag  DW_TAG_base_type
+MSP430 Assembler Unix v21.6.1 Tue Nov 26 21:31:57 2024
+
+Copyright (c) 2003-2018 Texas Instruments Incorporated
+scheduling.asm                                                       PAGE    8
+
+     375                    .dwattr $C$DW$T$9, DW_AT_encoding(DW_ATE_unsigned)
+     376                    .dwattr $C$DW$T$9, DW_AT_name("unsigned short")
+     377                    .dwattr $C$DW$T$9, DW_AT_byte_size(0x02)
+     378            
+     379            $C$DW$T$10      .dwtag  DW_TAG_base_type
+     380                    .dwattr $C$DW$T$10, DW_AT_encoding(DW_ATE_signed)
+     381                    .dwattr $C$DW$T$10, DW_AT_name("int")
+     382                    .dwattr $C$DW$T$10, DW_AT_byte_size(0x02)
+     383            
+     384            $C$DW$T$11      .dwtag  DW_TAG_base_type
+     385                    .dwattr $C$DW$T$11, DW_AT_encoding(DW_ATE_unsigned)
+     386                    .dwattr $C$DW$T$11, DW_AT_name("unsigned int")
+     387                    .dwattr $C$DW$T$11, DW_AT_byte_size(0x02)
+     388            
+     389            $C$DW$T$19      .dwtag  DW_TAG_typedef
+     390                    .dwattr $C$DW$T$19, DW_AT_name("Time")
+     391                    .dwattr $C$DW$T$19, DW_AT_type(*$C$DW$T$11)
+     392                    .dwattr $C$DW$T$19, DW_AT_language(DW_LANG_C)
+     393                    .dwattr $C$DW$T$19, DW_AT_decl_file("../scheduling.h")
+     394                    .dwattr $C$DW$T$19, DW_AT_decl_line(0x12)
+     395                    .dwattr $C$DW$T$19, DW_AT_decl_column(0x17)
+     396            
+     397            $C$DW$T$24      .dwtag  DW_TAG_volatile_type
+     398                    .dwattr $C$DW$T$24, DW_AT_type(*$C$DW$T$11)
+     399            
+     400            $C$DW$T$12      .dwtag  DW_TAG_base_type
+     401                    .dwattr $C$DW$T$12, DW_AT_encoding(DW_ATE_signed)
+     402                    .dwattr $C$DW$T$12, DW_AT_name("long")
+     403                    .dwattr $C$DW$T$12, DW_AT_byte_size(0x04)
+     404            
+     405            $C$DW$T$13      .dwtag  DW_TAG_base_type
+     406                    .dwattr $C$DW$T$13, DW_AT_encoding(DW_ATE_unsigned)
+     407                    .dwattr $C$DW$T$13, DW_AT_name("unsigned long")
+     408                    .dwattr $C$DW$T$13, DW_AT_byte_size(0x04)
+     409            
+     410            $C$DW$T$14      .dwtag  DW_TAG_base_type
+     411                    .dwattr $C$DW$T$14, DW_AT_encoding(DW_ATE_signed)
+     412                    .dwattr $C$DW$T$14, DW_AT_name("long long")
+     413                    .dwattr $C$DW$T$14, DW_AT_byte_size(0x08)
+     414            
+     415            $C$DW$T$15      .dwtag  DW_TAG_base_type
+     416                    .dwattr $C$DW$T$15, DW_AT_encoding(DW_ATE_unsigned)
+     417                    .dwattr $C$DW$T$15, DW_AT_name("unsigned long long")
+     418                    .dwattr $C$DW$T$15, DW_AT_byte_size(0x08)
+     419            
+     420            $C$DW$T$16      .dwtag  DW_TAG_base_type
+     421                    .dwattr $C$DW$T$16, DW_AT_encoding(DW_ATE_float)
+     422                    .dwattr $C$DW$T$16, DW_AT_name("float")
+     423                    .dwattr $C$DW$T$16, DW_AT_byte_size(0x04)
+     424            
+     425            $C$DW$T$17      .dwtag  DW_TAG_base_type
+     426                    .dwattr $C$DW$T$17, DW_AT_encoding(DW_ATE_float)
+     427                    .dwattr $C$DW$T$17, DW_AT_name("double")
+     428                    .dwattr $C$DW$T$17, DW_AT_byte_size(0x08)
+     429            
+MSP430 Assembler Unix v21.6.1 Tue Nov 26 21:31:57 2024
+
+Copyright (c) 2003-2018 Texas Instruments Incorporated
+scheduling.asm                                                       PAGE    9
+
+     430            $C$DW$T$18      .dwtag  DW_TAG_base_type
+     431                    .dwattr $C$DW$T$18, DW_AT_encoding(DW_ATE_float)
+     432                    .dwattr $C$DW$T$18, DW_AT_name("long double")
+     433                    .dwattr $C$DW$T$18, DW_AT_byte_size(0x08)
+     434            
+     435                    .dwattr $C$DW$CU, DW_AT_language(DW_LANG_C)
+     436            
+     437            ;***************************************************************
+     438            ;* DWARF CIE ENTRIES                                           *
+     439            ;***************************************************************
+     440            
+     441            $C$DW$CIE       .dwcie 16
+     442                    .dwcfi  cfa_register, 1
+     443                    .dwcfi  cfa_offset, 0
+     444                    .dwcfi  same_value, 0
+     445                    .dwcfi  same_value, 1
+     446                    .dwcfi  same_value, 3
+     447                    .dwcfi  same_value, 4
+     448                    .dwcfi  same_value, 5
+     449                    .dwcfi  same_value, 6
+     450                    .dwcfi  same_value, 7
+     451                    .dwcfi  same_value, 8
+     452                    .dwcfi  same_value, 9
+     453                    .dwcfi  same_value, 10
+     454                    .dwendentry
+     455            
+     456            ;***************************************************************
+     457            ;* DWARF REGISTER MAP                                          *
+     458            ;***************************************************************
+     459            
+     460            $C$DW$21        .dwtag  DW_TAG_TI_assign_register
+     461                    .dwattr $C$DW$21, DW_AT_name("PC")
+     462                    .dwattr $C$DW$21, DW_AT_location[DW_OP_reg0]
+     463            
+     464            $C$DW$22        .dwtag  DW_TAG_TI_assign_register
+     465                    .dwattr $C$DW$22, DW_AT_name("SP")
+     466                    .dwattr $C$DW$22, DW_AT_location[DW_OP_reg1]
+     467            
+     468            $C$DW$23        .dwtag  DW_TAG_TI_assign_register
+     469                    .dwattr $C$DW$23, DW_AT_name("SR")
+     470                    .dwattr $C$DW$23, DW_AT_location[DW_OP_reg2]
+     471            
+     472            $C$DW$24        .dwtag  DW_TAG_TI_assign_register
+     473                    .dwattr $C$DW$24, DW_AT_name("CG")
+     474                    .dwattr $C$DW$24, DW_AT_location[DW_OP_reg3]
+     475            
+     476            $C$DW$25        .dwtag  DW_TAG_TI_assign_register
+     477                    .dwattr $C$DW$25, DW_AT_name("r4")
+     478                    .dwattr $C$DW$25, DW_AT_location[DW_OP_reg4]
+     479            
+     480            $C$DW$26        .dwtag  DW_TAG_TI_assign_register
+     481                    .dwattr $C$DW$26, DW_AT_name("r5")
+     482                    .dwattr $C$DW$26, DW_AT_location[DW_OP_reg5]
+     483            
+     484            $C$DW$27        .dwtag  DW_TAG_TI_assign_register
+MSP430 Assembler Unix v21.6.1 Tue Nov 26 21:31:57 2024
+
+Copyright (c) 2003-2018 Texas Instruments Incorporated
+scheduling.asm                                                       PAGE   10
+
+     485                    .dwattr $C$DW$27, DW_AT_name("r6")
+     486                    .dwattr $C$DW$27, DW_AT_location[DW_OP_reg6]
+     487            
+     488            $C$DW$28        .dwtag  DW_TAG_TI_assign_register
+     489                    .dwattr $C$DW$28, DW_AT_name("r7")
+     490                    .dwattr $C$DW$28, DW_AT_location[DW_OP_reg7]
+     491            
+     492            $C$DW$29        .dwtag  DW_TAG_TI_assign_register
+     493                    .dwattr $C$DW$29, DW_AT_name("r8")
+     494                    .dwattr $C$DW$29, DW_AT_location[DW_OP_reg8]
+     495            
+     496            $C$DW$30        .dwtag  DW_TAG_TI_assign_register
+     497                    .dwattr $C$DW$30, DW_AT_name("r9")
+     498                    .dwattr $C$DW$30, DW_AT_location[DW_OP_reg9]
+     499            
+     500            $C$DW$31        .dwtag  DW_TAG_TI_assign_register
+     501                    .dwattr $C$DW$31, DW_AT_name("r10")
+     502                    .dwattr $C$DW$31, DW_AT_location[DW_OP_reg10]
+     503            
+     504            $C$DW$32        .dwtag  DW_TAG_TI_assign_register
+     505                    .dwattr $C$DW$32, DW_AT_name("r11")
+     506                    .dwattr $C$DW$32, DW_AT_location[DW_OP_reg11]
+     507            
+     508            $C$DW$33        .dwtag  DW_TAG_TI_assign_register
+     509                    .dwattr $C$DW$33, DW_AT_name("r12")
+     510                    .dwattr $C$DW$33, DW_AT_location[DW_OP_reg12]
+     511            
+     512            $C$DW$34        .dwtag  DW_TAG_TI_assign_register
+     513                    .dwattr $C$DW$34, DW_AT_name("r13")
+     514                    .dwattr $C$DW$34, DW_AT_location[DW_OP_reg13]
+     515            
+     516            $C$DW$35        .dwtag  DW_TAG_TI_assign_register
+     517                    .dwattr $C$DW$35, DW_AT_name("r14")
+     518                    .dwattr $C$DW$35, DW_AT_location[DW_OP_reg14]
+     519            
+     520            $C$DW$36        .dwtag  DW_TAG_TI_assign_register
+     521                    .dwattr $C$DW$36, DW_AT_name("r15")
+     522                    .dwattr $C$DW$36, DW_AT_location[DW_OP_reg15]
+     523            
+     524            $C$DW$37        .dwtag  DW_TAG_TI_assign_register
+     525                    .dwattr $C$DW$37, DW_AT_name("CIE_RETA")
+     526                    .dwattr $C$DW$37, DW_AT_location[DW_OP_reg16]
+     527            
+     528                    .dwendtag $C$DW$CU
+     529            
+
+No Assembly Errors, No Assembly Warnings
