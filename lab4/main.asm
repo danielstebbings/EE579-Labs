@@ -90,8 +90,6 @@ BUZ_FMAX	.set	47						; fhigh at ADC_VAL = (POT_MAX-POT_MIN)
 BUZ_C_HIGH	.set	78
 BUZ_C_LOW	.set	207
 
-
-
 ;-------------------------------------------------------------------------------
 RESET       mov.w   #__STACK_END,SP         ; Initialize stackpointer
 StopWDT     mov.w   #WDTPW|WDTHOLD,&WDTCTL  ; Stop watchdog timer
@@ -255,7 +253,45 @@ BUZ_TIMER	bic.w	MC_1,&TA1CTL			; clear upmode to stop timer
 ;-------------------------------------------------------------------------------
 SCHED_ISR; Scheduler ISR
 ;-------------------------------------------------------------------------------
+			add		#TPERIOD,R5				; update currentTime
+			xor		BIT0,&P1OUT				; toggle scheduler LED
 
+; if (button_flag && isTime(Tdebounce)) : deal with button debounce
+SCHED_CDEB1	bit		#DEB_FLAG,R4			; check if debounce flag
+			jeq		#SCHED_CDEB2			; if high, check second condition
+			jmp		#SCHED_CCON1			; else: check ADC Conversion
+SCHED_CDEB2	cmp		R5,R6					; check if it's time
+			jeq		#SCHED_DEB				; true: Go deal with debounce
+			jmp		#SCHED_CCON1			; false: go check ADC Conversiion
+; Deal with debounce
+SCHED_DEB	bic		#DEB_FLAG,R4			; clear debounce flag
+			bit		#BIT3,&P1IN				; check if button still pressed
+			jeq		#SCHED_CCON1				; if set: Button not pressed, skip
+			bis		#BUT_JFLAG,R4			; else: button still pressed, set job
+
+; if (conversion_flag && isTime(TADC)
+SCHED_CCON1 bit 	#CONV_FLAG,R4			; check if conversion flag
+			jeq		#SCHED_CCON2			; if high, check second condition
+			jmp		#SCHED_CBUZ1			; else: go check buzzer
+SCHED_CCON2	bit 	R5,R8					; check if it's time
+			jeq		#SCHED_CONV				; if true: Deal with ADC
+			jmp		#SCHED_CBUZ1			; if false: check buzzer
+; Deal with ADC conversion
+SCHED_CONV	bic		#CONV_FLAG,R4			; clear conversion flag
+			bis		#ADC_JFLAG,R4			; raise ADC job
+
+; if(isTime(Tbuzzer))
+SCHED_CBUZ	cmp		R5,R7					; check if time
+			jeq		#SCHED_BUZ				; if true: deal with buzzer
+			jmp		#SCHED_WAKE				; if false: check if wake
+SCHED_BUZ	bis		#BUZ_JFLAG				; raise buzzer job
+
+; Wake up if any pending jobs
+SCHED_WAKE	bit		#JOB_FLAGS,R4			; check if any job flag set
+			jz		#SCHED_FIN				; if 0: no flags, stay asleep
+			bic.w	#LPM0, 0(SP)			; else: clear LPM0 on exit
+
+SCHED_FIN	reti
 ;-------------------------------------------------------------------------------
 ADC_ISR; ADC Conversion ISR
 ;-------------------------------------------------------------------------------
