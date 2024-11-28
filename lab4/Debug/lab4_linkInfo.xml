@@ -2,7 +2,7 @@
 <link_info>
    <banner>MSP430 Linker Unix v21.6.1.LTS</banner>
    <copyright>Copyright (c) 2003-2018 Texas Instruments Incorporated</copyright>
-   <link_time>0x67463e4e</link_time>
+   <link_time>0x6748e0a4</link_time>
    <link_errors>0x0</link_errors>
    <output_file>lab4.out</output_file>
    <entry_point>
@@ -31,75 +31,57 @@
          <path>/home/daniel/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib/</path>
          <kind>archive</kind>
          <file>rts430_eabi.lib</file>
-         <name>int02.asm.obj</name>
+         <name>int03.asm.obj</name>
       </input_file>
       <input_file id="fl-1e">
          <path>/home/daniel/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib/</path>
          <kind>archive</kind>
          <file>rts430_eabi.lib</file>
-         <name>int03.asm.obj</name>
+         <name>int06.asm.obj</name>
       </input_file>
       <input_file id="fl-1f">
          <path>/home/daniel/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib/</path>
          <kind>archive</kind>
          <file>rts430_eabi.lib</file>
-         <name>int05.asm.obj</name>
+         <name>int07.asm.obj</name>
       </input_file>
       <input_file id="fl-20">
          <path>/home/daniel/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib/</path>
          <kind>archive</kind>
          <file>rts430_eabi.lib</file>
-         <name>int06.asm.obj</name>
+         <name>int08.asm.obj</name>
       </input_file>
       <input_file id="fl-21">
          <path>/home/daniel/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib/</path>
          <kind>archive</kind>
          <file>rts430_eabi.lib</file>
-         <name>int07.asm.obj</name>
+         <name>int10.asm.obj</name>
       </input_file>
       <input_file id="fl-22">
          <path>/home/daniel/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib/</path>
          <kind>archive</kind>
          <file>rts430_eabi.lib</file>
-         <name>int08.asm.obj</name>
+         <name>int11.asm.obj</name>
       </input_file>
       <input_file id="fl-23">
          <path>/home/daniel/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib/</path>
          <kind>archive</kind>
          <file>rts430_eabi.lib</file>
-         <name>int09.asm.obj</name>
+         <name>int12.asm.obj</name>
       </input_file>
       <input_file id="fl-24">
          <path>/home/daniel/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib/</path>
          <kind>archive</kind>
          <file>rts430_eabi.lib</file>
-         <name>int10.asm.obj</name>
+         <name>int13.asm.obj</name>
       </input_file>
       <input_file id="fl-25">
          <path>/home/daniel/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib/</path>
          <kind>archive</kind>
          <file>rts430_eabi.lib</file>
-         <name>int11.asm.obj</name>
-      </input_file>
-      <input_file id="fl-26">
-         <path>/home/daniel/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib/</path>
-         <kind>archive</kind>
-         <file>rts430_eabi.lib</file>
-         <name>int12.asm.obj</name>
-      </input_file>
-      <input_file id="fl-27">
-         <path>/home/daniel/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib/</path>
-         <kind>archive</kind>
-         <file>rts430_eabi.lib</file>
-         <name>int13.asm.obj</name>
-      </input_file>
-      <input_file id="fl-28">
-         <path>/home/daniel/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib/</path>
-         <kind>archive</kind>
-         <file>rts430_eabi.lib</file>
          <name>int14.asm.obj</name>
       </input_file>
-      <input_file id="fl-29">
+      <input_file id="fl-26">
          <path>/home/daniel/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/lib/</path>
          <kind>archive</kind>
          <file>rts430_eabi.lib</file>
@@ -124,15 +106,15 @@
          <name>.text</name>
          <load_address>0xc000</load_address>
          <run_address>0xc000</run_address>
-         <size>0xa</size>
+         <size>0x1f6</size>
          <input_file_ref idref="fl-1"/>
       </object_component>
       <object_component id="oc-ab">
          <name>.text:_isr:__TI_ISR_TRAP</name>
-         <load_address>0xc00a</load_address>
-         <run_address>0xc00a</run_address>
+         <load_address>0xc1f6</load_address>
+         <run_address>0xc1f6</run_address>
          <size>0x8</size>
-         <input_file_ref idref="fl-29"/>
+         <input_file_ref idref="fl-26"/>
       </object_component>
       <object_component id="oc-b2">
          <name>.binit</name>
@@ -140,96 +122,96 @@
          <run_address>0xc000</run_address>
          <size>0x0</size>
       </object_component>
-      <object_component id="oc-39">
+      <object_component id="oc-3c">
          <name>.int00</name>
          <load_address>0xffe0</load_address>
          <run_address>0xffe0</run_address>
          <size>0x2</size>
          <input_file_ref idref="fl-1c"/>
       </object_component>
-      <object_component id="oc-3a">
+      <object_component id="oc-37">
          <name>.int02</name>
          <load_address>0xffe4</load_address>
          <run_address>0xffe4</run_address>
          <size>0x2</size>
-         <input_file_ref idref="fl-1d"/>
+         <input_file_ref idref="fl-1"/>
       </object_component>
-      <object_component id="oc-3b">
+      <object_component id="oc-3d">
          <name>.int03</name>
          <load_address>0xffe6</load_address>
          <run_address>0xffe6</run_address>
          <size>0x2</size>
-         <input_file_ref idref="fl-1e"/>
+         <input_file_ref idref="fl-1d"/>
       </object_component>
-      <object_component id="oc-3c">
+      <object_component id="oc-36">
          <name>.int05</name>
          <load_address>0xffea</load_address>
          <run_address>0xffea</run_address>
          <size>0x2</size>
-         <input_file_ref idref="fl-1f"/>
+         <input_file_ref idref="fl-1"/>
       </object_component>
-      <object_component id="oc-3d">
+      <object_component id="oc-3e">
          <name>.int06</name>
          <load_address>0xffec</load_address>
          <run_address>0xffec</run_address>
          <size>0x2</size>
-         <input_file_ref idref="fl-20"/>
+         <input_file_ref idref="fl-1e"/>
       </object_component>
-      <object_component id="oc-3e">
+      <object_component id="oc-3f">
          <name>.int07</name>
          <load_address>0xffee</load_address>
          <run_address>0xffee</run_address>
          <size>0x2</size>
-         <input_file_ref idref="fl-21"/>
+         <input_file_ref idref="fl-1f"/>
       </object_component>
-      <object_component id="oc-3f">
+      <object_component id="oc-40">
          <name>.int08</name>
          <load_address>0xfff0</load_address>
          <run_address>0xfff0</run_address>
          <size>0x2</size>
-         <input_file_ref idref="fl-22"/>
+         <input_file_ref idref="fl-20"/>
       </object_component>
-      <object_component id="oc-40">
+      <object_component id="oc-35">
          <name>.int09</name>
          <load_address>0xfff2</load_address>
          <run_address>0xfff2</run_address>
          <size>0x2</size>
-         <input_file_ref idref="fl-23"/>
+         <input_file_ref idref="fl-1"/>
       </object_component>
       <object_component id="oc-41">
          <name>.int10</name>
          <load_address>0xfff4</load_address>
          <run_address>0xfff4</run_address>
          <size>0x2</size>
-         <input_file_ref idref="fl-24"/>
+         <input_file_ref idref="fl-21"/>
       </object_component>
       <object_component id="oc-42">
          <name>.int11</name>
          <load_address>0xfff6</load_address>
          <run_address>0xfff6</run_address>
          <size>0x2</size>
-         <input_file_ref idref="fl-25"/>
+         <input_file_ref idref="fl-22"/>
       </object_component>
       <object_component id="oc-43">
          <name>.int12</name>
          <load_address>0xfff8</load_address>
          <run_address>0xfff8</run_address>
          <size>0x2</size>
-         <input_file_ref idref="fl-26"/>
+         <input_file_ref idref="fl-23"/>
       </object_component>
       <object_component id="oc-44">
          <name>.int13</name>
          <load_address>0xfffa</load_address>
          <run_address>0xfffa</run_address>
          <size>0x2</size>
-         <input_file_ref idref="fl-27"/>
+         <input_file_ref idref="fl-24"/>
       </object_component>
       <object_component id="oc-45">
          <name>.int14</name>
          <load_address>0xfffc</load_address>
          <run_address>0xfffc</run_address>
          <size>0x2</size>
-         <input_file_ref idref="fl-28"/>
+         <input_file_ref idref="fl-25"/>
       </object_component>
       <object_component id="oc-a9">
          <name>.reset</name>
@@ -238,61 +220,61 @@
          <size>0x2</size>
          <input_file_ref idref="fl-1"/>
       </object_component>
-      <object_component id="oc-35">
+      <object_component id="oc-38">
          <name>.debug_info</name>
          <load_address>0x0</load_address>
          <run_address>0x0</run_address>
-         <size>0xc6</size>
+         <size>0x141</size>
          <input_file_ref idref="fl-1"/>
       </object_component>
       <object_component id="oc-ac">
          <name>.debug_info</name>
-         <load_address>0xc6</load_address>
-         <run_address>0xc6</run_address>
+         <load_address>0x141</load_address>
+         <run_address>0x141</run_address>
          <size>0x10f</size>
-         <input_file_ref idref="fl-29"/>
+         <input_file_ref idref="fl-26"/>
       </object_component>
       <object_component id="oc-e4">
          <name>.debug_info</name>
-         <load_address>0x1d5</load_address>
-         <run_address>0x1d5</run_address>
+         <load_address>0x250</load_address>
+         <run_address>0x250</run_address>
          <size>0x9a</size>
       </object_component>
-      <object_component id="oc-38">
+      <object_component id="oc-3b">
          <name>.debug_line</name>
          <load_address>0x0</load_address>
          <run_address>0x0</run_address>
-         <size>0x3b</size>
+         <size>0xd3</size>
          <input_file_ref idref="fl-1"/>
       </object_component>
       <object_component id="oc-af">
          <name>.debug_line</name>
-         <load_address>0x3b</load_address>
-         <run_address>0x3b</run_address>
+         <load_address>0xd3</load_address>
+         <run_address>0xd3</run_address>
          <size>0x3d</size>
-         <input_file_ref idref="fl-29"/>
+         <input_file_ref idref="fl-26"/>
       </object_component>
       <object_component id="oc-aa">
          <name>.debug_abbrev</name>
          <load_address>0x0</load_address>
          <run_address>0x0</run_address>
-         <size>0x25</size>
+         <size>0x41</size>
          <input_file_ref idref="fl-1"/>
       </object_component>
       <object_component id="oc-b0">
          <name>.debug_abbrev</name>
-         <load_address>0x25</load_address>
-         <run_address>0x25</run_address>
+         <load_address>0x41</load_address>
+         <run_address>0x41</run_address>
          <size>0x28</size>
-         <input_file_ref idref="fl-29"/>
+         <input_file_ref idref="fl-26"/>
       </object_component>
       <object_component id="oc-e5">
          <name>.debug_abbrev</name>
-         <load_address>0x4d</load_address>
-         <run_address>0x4d</run_address>
+         <load_address>0x69</load_address>
+         <run_address>0x69</run_address>
          <size>0xf</size>
       </object_component>
-      <object_component id="oc-36">
+      <object_component id="oc-39">
          <name>.debug_aranges</name>
          <load_address>0x0</load_address>
          <run_address>0x0</run_address>
@@ -304,21 +286,21 @@
          <load_address>0x20</load_address>
          <run_address>0x20</run_address>
          <size>0x20</size>
-         <input_file_ref idref="fl-29"/>
+         <input_file_ref idref="fl-26"/>
       </object_component>
-      <object_component id="oc-37">
+      <object_component id="oc-3a">
          <name>.debug_pubnames</name>
          <load_address>0x0</load_address>
          <run_address>0x0</run_address>
-         <size>0x2a</size>
+         <size>0x2b</size>
          <input_file_ref idref="fl-1"/>
       </object_component>
       <object_component id="oc-ae">
          <name>.debug_pubnames</name>
-         <load_address>0x2a</load_address>
-         <run_address>0x2a</run_address>
+         <load_address>0x2b</load_address>
+         <run_address>0x2b</run_address>
          <size>0x2b</size>
-         <input_file_ref idref="fl-29"/>
+         <input_file_ref idref="fl-26"/>
       </object_component>
    </object_component_list>
    <logical_group_list>
@@ -364,7 +346,7 @@
          <name>.text</name>
          <load_address>0xc000</load_address>
          <run_address>0xc000</run_address>
-         <size>0x12</size>
+         <size>0x1fe</size>
          <contents>
             <object_component_ref idref="oc-34"/>
             <object_component_ref idref="oc-ab"/>
@@ -476,7 +458,7 @@
          <run_address>0xffe0</run_address>
          <size>0x2</size>
          <contents>
-            <object_component_ref idref="oc-39"/>
+            <object_component_ref idref="oc-3c"/>
          </contents>
       </logical_group>
       <logical_group id="lg-18" display="no" color="cyan">
@@ -492,7 +474,7 @@
          <run_address>0xffe4</run_address>
          <size>0x2</size>
          <contents>
-            <object_component_ref idref="oc-3a"/>
+            <object_component_ref idref="oc-37"/>
          </contents>
       </logical_group>
       <logical_group id="lg-1b" display="no" color="cyan">
@@ -501,7 +483,7 @@
          <run_address>0xffe6</run_address>
          <size>0x2</size>
          <contents>
-            <object_component_ref idref="oc-3b"/>
+            <object_component_ref idref="oc-3d"/>
          </contents>
       </logical_group>
       <logical_group id="lg-1d" display="no" color="cyan">
@@ -517,7 +499,7 @@
          <run_address>0xffea</run_address>
          <size>0x2</size>
          <contents>
-            <object_component_ref idref="oc-3c"/>
+            <object_component_ref idref="oc-36"/>
          </contents>
       </logical_group>
       <logical_group id="lg-20" display="no" color="cyan">
@@ -526,7 +508,7 @@
          <run_address>0xffec</run_address>
          <size>0x2</size>
          <contents>
-            <object_component_ref idref="oc-3d"/>
+            <object_component_ref idref="oc-3e"/>
          </contents>
       </logical_group>
       <logical_group id="lg-22" display="no" color="cyan">
@@ -535,7 +517,7 @@
          <run_address>0xffee</run_address>
          <size>0x2</size>
          <contents>
-            <object_component_ref idref="oc-3e"/>
+            <object_component_ref idref="oc-3f"/>
          </contents>
       </logical_group>
       <logical_group id="lg-24" display="no" color="cyan">
@@ -544,7 +526,7 @@
          <run_address>0xfff0</run_address>
          <size>0x2</size>
          <contents>
-            <object_component_ref idref="oc-3f"/>
+            <object_component_ref idref="oc-40"/>
          </contents>
       </logical_group>
       <logical_group id="lg-26" display="no" color="cyan">
@@ -553,7 +535,7 @@
          <run_address>0xfff2</run_address>
          <size>0x2</size>
          <contents>
-            <object_component_ref idref="oc-40"/>
+            <object_component_ref idref="oc-35"/>
          </contents>
       </logical_group>
       <logical_group id="lg-28" display="no" color="cyan">
@@ -621,9 +603,9 @@
          <name>.debug_info</name>
          <load_address>0x0</load_address>
          <run_address>0x0</run_address>
-         <size>0x26f</size>
+         <size>0x2ea</size>
          <contents>
-            <object_component_ref idref="oc-35"/>
+            <object_component_ref idref="oc-38"/>
             <object_component_ref idref="oc-ac"/>
             <object_component_ref idref="oc-e4"/>
          </contents>
@@ -632,9 +614,9 @@
          <name>.debug_line</name>
          <load_address>0x0</load_address>
          <run_address>0x0</run_address>
-         <size>0x78</size>
+         <size>0x110</size>
          <contents>
-            <object_component_ref idref="oc-38"/>
+            <object_component_ref idref="oc-3b"/>
             <object_component_ref idref="oc-af"/>
          </contents>
       </logical_group>
@@ -642,7 +624,7 @@
          <name>.debug_abbrev</name>
          <load_address>0x0</load_address>
          <run_address>0x0</run_address>
-         <size>0x5c</size>
+         <size>0x78</size>
          <contents>
             <object_component_ref idref="oc-aa"/>
             <object_component_ref idref="oc-b0"/>
@@ -655,7 +637,7 @@
          <run_address>0x0</run_address>
          <size>0x40</size>
          <contents>
-            <object_component_ref idref="oc-36"/>
+            <object_component_ref idref="oc-39"/>
             <object_component_ref idref="oc-ad"/>
          </contents>
       </logical_group>
@@ -663,9 +645,9 @@
          <name>.debug_pubnames</name>
          <load_address>0x0</load_address>
          <run_address>0x0</run_address>
-         <size>0x55</size>
+         <size>0x56</size>
          <contents>
-            <object_component_ref idref="oc-37"/>
+            <object_component_ref idref="oc-3a"/>
             <object_component_ref idref="oc-ae"/>
          </contents>
       </logical_group>
@@ -681,7 +663,7 @@
          <name>SEGMENT_0</name>
          <load_address>0xc000</load_address>
          <run_address>0xc000</run_address>
-         <size>0x12</size>
+         <size>0x1fe</size>
          <flags>0x5</flags>
          <contents>
             <logical_group_ref idref="lg-7"/>
@@ -833,8 +815,8 @@
          <page_id>0x0</page_id>
          <origin>0xc000</origin>
          <length>0x3fde</length>
-         <used_space>0x12</used_space>
-         <unused_space>0x3fcc</unused_space>
+         <used_space>0x1fe</used_space>
+         <unused_space>0x3de0</unused_space>
          <attributes>RWIX</attributes>
          <usage_details>
             <allocated_space>
@@ -844,12 +826,12 @@
             </allocated_space>
             <allocated_space>
                <start_address>0xc000</start_address>
-               <size>0x12</size>
+               <size>0x1fe</size>
                <logical_group_ref idref="lg-7"/>
             </allocated_space>
             <available_space>
-               <start_address>0xc012</start_address>
-               <size>0x3fcc</size>
+               <start_address>0xc1fe</start_address>
+               <size>0x3de0</size>
             </available_space>
          </usage_details>
       </memory_area>
@@ -1536,79 +1518,79 @@
          <name>__TI_prof_data_size</name>
          <value>0xffffffff</value>
       </symbol>
-      <symbol id="sm-9e">
+      <symbol id="sm-ce">
          <name>RESET</name>
          <value>0xc000</value>
          <object_component_ref idref="oc-34"/>
       </symbol>
-      <symbol id="sm-a2">
-         <name>__TI_int00</name>
-         <value>0xffe0</value>
-         <object_component_ref idref="oc-39"/>
-      </symbol>
-      <symbol id="sm-a5">
-         <name>__TI_int02</name>
-         <value>0xffe4</value>
-         <object_component_ref idref="oc-3a"/>
-      </symbol>
-      <symbol id="sm-a8">
-         <name>__TI_int03</name>
-         <value>0xffe6</value>
-         <object_component_ref idref="oc-3b"/>
-      </symbol>
-      <symbol id="sm-ab">
-         <name>__TI_int05</name>
-         <value>0xffea</value>
-         <object_component_ref idref="oc-3c"/>
-      </symbol>
-      <symbol id="sm-ae">
-         <name>__TI_int06</name>
-         <value>0xffec</value>
-         <object_component_ref idref="oc-3d"/>
-      </symbol>
-      <symbol id="sm-b1">
-         <name>__TI_int07</name>
-         <value>0xffee</value>
-         <object_component_ref idref="oc-3e"/>
-      </symbol>
-      <symbol id="sm-b4">
-         <name>__TI_int08</name>
-         <value>0xfff0</value>
-         <object_component_ref idref="oc-3f"/>
-      </symbol>
-      <symbol id="sm-b7">
+      <symbol id="sm-cf">
          <name>__TI_int09</name>
          <value>0xfff2</value>
+         <object_component_ref idref="oc-35"/>
+      </symbol>
+      <symbol id="sm-d0">
+         <name>__TI_int05</name>
+         <value>0xffea</value>
+         <object_component_ref idref="oc-36"/>
+      </symbol>
+      <symbol id="sm-d1">
+         <name>__TI_int02</name>
+         <value>0xffe4</value>
+         <object_component_ref idref="oc-37"/>
+      </symbol>
+      <symbol id="sm-d5">
+         <name>__TI_int00</name>
+         <value>0xffe0</value>
+         <object_component_ref idref="oc-3c"/>
+      </symbol>
+      <symbol id="sm-d8">
+         <name>__TI_int03</name>
+         <value>0xffe6</value>
+         <object_component_ref idref="oc-3d"/>
+      </symbol>
+      <symbol id="sm-db">
+         <name>__TI_int06</name>
+         <value>0xffec</value>
+         <object_component_ref idref="oc-3e"/>
+      </symbol>
+      <symbol id="sm-de">
+         <name>__TI_int07</name>
+         <value>0xffee</value>
+         <object_component_ref idref="oc-3f"/>
+      </symbol>
+      <symbol id="sm-e1">
+         <name>__TI_int08</name>
+         <value>0xfff0</value>
          <object_component_ref idref="oc-40"/>
       </symbol>
-      <symbol id="sm-ba">
+      <symbol id="sm-e4">
          <name>__TI_int10</name>
          <value>0xfff4</value>
          <object_component_ref idref="oc-41"/>
       </symbol>
-      <symbol id="sm-bd">
+      <symbol id="sm-e7">
          <name>__TI_int11</name>
          <value>0xfff6</value>
          <object_component_ref idref="oc-42"/>
       </symbol>
-      <symbol id="sm-c0">
+      <symbol id="sm-ea">
          <name>__TI_int12</name>
          <value>0xfff8</value>
          <object_component_ref idref="oc-43"/>
       </symbol>
-      <symbol id="sm-c3">
+      <symbol id="sm-ed">
          <name>__TI_int13</name>
          <value>0xfffa</value>
          <object_component_ref idref="oc-44"/>
       </symbol>
-      <symbol id="sm-c6">
+      <symbol id="sm-f0">
          <name>__TI_int14</name>
          <value>0xfffc</value>
          <object_component_ref idref="oc-45"/>
       </symbol>
-      <symbol id="sm-ce">
+      <symbol id="sm-f8">
          <name>__TI_ISR_TRAP</name>
-         <value>0xc00a</value>
+         <value>0xc1f6</value>
          <object_component_ref idref="oc-ab"/>
       </symbol>
    </symbol_table>

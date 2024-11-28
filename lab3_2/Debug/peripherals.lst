@@ -1,11 +1,11 @@
-MSP430 Assembler Unix v21.6.1 Tue Nov 26 21:31:57 2024
+MSP430 Assembler Unix v21.6.1 Thu Nov 28 19:50:21 2024
 
 Copyright (c) 2003-2018 Texas Instruments Incorporated
 peripherals.asm                                                      PAGE    1
 
        1            ;******************************************************************************
        2            ;* MSP430 G3 C/C++ Codegen                                          Unix v21.6.1.LTS *
-       3            ;* Date/Time created: Tue Nov 26 21:31:57 2024                                *
+       3            ;* Date/Time created: Thu Nov 28 19:50:21 2024                                *
        4            ;******************************************************************************
        5                    .compiler_opts --abi=eabi --diag_wrap=off --hll_source=on --mem_model:code=small --mem_model:d
        6            
@@ -58,7 +58,7 @@ peripherals.asm                                                      PAGE    1
       53                    .dwattr $C$DW$5, DW_AT_name("TA1CCTL0")
       54                    .dwattr $C$DW$5, DW_AT_TI_symbol_name("TA1CCTL0")
       55                    .dwattr $C$DW$5, DW_AT_type(*$C$DW$T$22)
-MSP430 Assembler Unix v21.6.1 Tue Nov 26 21:31:57 2024
+MSP430 Assembler Unix v21.6.1 Thu Nov 28 19:50:21 2024
 
 Copyright (c) 2003-2018 Texas Instruments Incorporated
 peripherals.asm                                                      PAGE    2
@@ -99,7 +99,7 @@ peripherals.asm                                                      PAGE    2
       89                    .dwattr $C$DW$8, DW_AT_decl_line(0x26e)
       90                    .dwattr $C$DW$8, DW_AT_decl_column(0x01)
       91            
-      92            ;       /home/daniel/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/opt430 /tmp/TI4lr2Dvol
+      92            ;       /home/daniel/ti/ccs1281/ccs/tools/compiler/ti-cgt-msp430_21.6.1.LTS/bin/opt430 /tmp/TI4OssbVvd
       93 000000               .sect   ".text:setup_pot_ADC"
       94                    .clink
       95                    .global setup_pot_ADC
@@ -118,7 +118,7 @@ peripherals.asm                                                      PAGE    2
      108                    .dwattr $C$DW$9, DW_AT_decl_column(0x06)
      109                    .dwattr $C$DW$9, DW_AT_TI_max_frame_size(0x02)
      110                    .dwpsn  file "../peripherals.c",line 20,column 26,is_stmt,address setup_pot_ADC,isa 0
-MSP430 Assembler Unix v21.6.1 Tue Nov 26 21:31:57 2024
+MSP430 Assembler Unix v21.6.1 Thu Nov 28 19:50:21 2024
 
 Copyright (c) 2003-2018 Texas Instruments Incorporated
 peripherals.asm                                                      PAGE    3
@@ -178,7 +178,7 @@ peripherals.asm                                                      PAGE    3
      153                    .dwattr $C$DW$11, DW_AT_name("setup_buzzer_timer")
      154                    .dwattr $C$DW$11, DW_AT_low_pc(setup_buzzer_timer)
      155                    .dwattr $C$DW$11, DW_AT_high_pc(0x00)
-MSP430 Assembler Unix v21.6.1 Tue Nov 26 21:31:57 2024
+MSP430 Assembler Unix v21.6.1 Thu Nov 28 19:50:21 2024
 
 Copyright (c) 2003-2018 Texas Instruments Incorporated
 peripherals.asm                                                      PAGE    4
@@ -238,7 +238,7 @@ peripherals.asm                                                      PAGE    4
      206                    .dwattr $C$DW$15, DW_AT_low_pc(0x00)
      207                    .dwattr $C$DW$15, DW_AT_name("__mspabi_divli")
      208                    .dwattr $C$DW$15, DW_AT_TI_call
-MSP430 Assembler Unix v21.6.1 Tue Nov 26 21:31:57 2024
+MSP430 Assembler Unix v21.6.1 Thu Nov 28 19:50:21 2024
 
 Copyright (c) 2003-2018 Texas Instruments Incorporated
 peripherals.asm                                                      PAGE    5
@@ -298,7 +298,7 @@ peripherals.asm                                                      PAGE    5
      251            ;* BUILD ATTRIBUTES                                                           *
      252            ;******************************************************************************
      253                    .battr "TI", Tag_File, 1, Tag_LPM_INFO(1)
-MSP430 Assembler Unix v21.6.1 Tue Nov 26 21:31:57 2024
+MSP430 Assembler Unix v21.6.1 Thu Nov 28 19:50:21 2024
 
 Copyright (c) 2003-2018 Texas Instruments Incorporated
 peripherals.asm                                                      PAGE    6
@@ -358,7 +358,7 @@ peripherals.asm                                                      PAGE    6
      306                    .dwattr $C$DW$T$11, DW_AT_encoding(DW_ATE_unsigned)
      307                    .dwattr $C$DW$T$11, DW_AT_name("unsigned int")
      308                    .dwattr $C$DW$T$11, DW_AT_byte_size(0x02)
-MSP430 Assembler Unix v21.6.1 Tue Nov 26 21:31:57 2024
+MSP430 Assembler Unix v21.6.1 Thu Nov 28 19:50:21 2024
 
 Copyright (c) 2003-2018 Texas Instruments Incorporated
 peripherals.asm                                                      PAGE    7
@@ -418,7 +418,7 @@ peripherals.asm                                                      PAGE    7
      361                    .dwcfi  same_value, 5
      362                    .dwcfi  same_value, 6
      363                    .dwcfi  same_value, 7
-MSP430 Assembler Unix v21.6.1 Tue Nov 26 21:31:57 2024
+MSP430 Assembler Unix v21.6.1 Thu Nov 28 19:50:21 2024
 
 Copyright (c) 2003-2018 Texas Instruments Incorporated
 peripherals.asm                                                      PAGE    8
@@ -478,7 +478,7 @@ peripherals.asm                                                      PAGE    8
      416            
      417            $C$DW$28        .dwtag  DW_TAG_TI_assign_register
      418                    .dwattr $C$DW$28, DW_AT_name("r11")
-MSP430 Assembler Unix v21.6.1 Tue Nov 26 21:31:57 2024
+MSP430 Assembler Unix v21.6.1 Thu Nov 28 19:50:21 2024
 
 Copyright (c) 2003-2018 Texas Instruments Incorporated
 peripherals.asm                                                      PAGE    9
